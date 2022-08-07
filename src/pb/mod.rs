@@ -2,6 +2,7 @@
 #[allow(dead_code)]
 pub mod aptos;
 
-#[path = "aptos.stats.v1.rs"]
+#[path = "aptos.block_output.v1.rs"]
 #[allow(dead_code)]
-pub mod stats;
+pub mod block_output;
+

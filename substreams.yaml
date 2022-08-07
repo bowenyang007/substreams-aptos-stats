@@ -4,11 +4,12 @@ package:
   version: v0.1.0
 
 imports:
-  aptos: /Users/maoueh/work/sf/firehose-aptos/aptos-v0.0.1.spkg
+  aptos: /Users/bowen/Desktop/aptos/firehose-aptos/aptos-v0.0.1.spkg
 
 protobuf:
   files:
     - stats.proto
+    - block_output.proto
   importPaths:
     - ./proto
 
@@ -25,3 +26,11 @@ modules:
     valueType: int64
     inputs:
       - source: sf.aptos.type.v1.Transaction
+
+  - name: block_to_block_output
+    kind: map
+    initialBlock: 0
+    inputs:
+      - source: sf.aptos.type.v1.Transaction
+    output:
+      type: proto:aptos.block_output.v1.BlockOutput
